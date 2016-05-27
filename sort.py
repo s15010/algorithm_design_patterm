@@ -9,7 +9,7 @@ def data_generate():
 
 def selection_sort(data):
     for i in range(len(data) - 1):
-        minimum = i 
+        minimum = i
 
         for t in range(i + 1, len(data)):
             if data[minimum] > data[t]:
@@ -23,7 +23,7 @@ def bubble_sort(data):
         for t in range(1, len(data) - i):
             if data[t] < data[t-1]:
                 data[t], data[t-1] = data[t-1], data[t]
-	    
+
 def insertion_sort(data):
     for i in range(1, len(data)):
         tmp = data[i]
@@ -33,6 +33,13 @@ def insertion_sort(data):
                 data[j] = data[j-1]
                 j -= 1
             data[j] = tmp
+
+def insertion_sort(data):
+    for pos in range(1, len(data)):
+    ins = pos
+    data.insert(0, data[pos])
+
+
 
 def shell_sort(data):
     gap = len(data) // 2
@@ -91,7 +98,7 @@ def quick_sort(data):
 
     return left + [pivot] + right
     #}}}
-                
+
 
 if __name__ == '__main__':
     import time
@@ -108,10 +115,10 @@ if __name__ == '__main__':
     end = time.time()
     print('経過時間:', (end-start))
     print('平均時間', ((end-start) / LOOP_COUNT))
-   
+
     start = time.time()
 
-    
+
     for _ in range(LOOP_COUNT):
         data = data_generate()
         bubble_sort(data)
@@ -120,7 +127,7 @@ if __name__ == '__main__':
     end = time.time()
     print()
     print('経過時間、', (end-start))
-    print('平均時間、', ((end-start) / LOOP_COUNT))   
+    print('平均時間、', ((end-start) / LOOP_COUNT))
     '''
     #data = data_generate()
     #insertion_sort(data)
