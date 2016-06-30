@@ -82,7 +82,7 @@ def merge_sort(data):
 def quick_sort(data):
     #{{{
     if len(data) = 1:
-        return data
+      return data
     pivot = data[0]
     left = []
     right = []
